@@ -1,0 +1,38 @@
+<ion-view view-title="{{title}}">  
+  <ion-nav-buttons side="right">
+	<button class="button button-icon icon ion-navicon" ng-click="popover.show($event)"></button>
+  </ion-nav-buttons>
+  <ion-content>	
+	<ion-refresher
+		pulling-text="下拉更新..."
+		on-refresh="doRefresh()">
+	  </ion-refresher>
+    <ion-list>
+      <ion-item class="item" ng-class="{true: 'item-thumbnail-right', false: ''}[news.pic_url != null]"  ng-repeat="news in newsList" href="#/tab/news/{{news.news_id}}">	  
+        <img ng-if="news.pic_url != null" ng-src="{{ (news.pic_url == null)?'img/ionic.png':news.pic_url}}">
+        <h2 style="overflow:visible;white-space:normal;line-height:24px;">{{news.news_title}}</h2>  
+		<p><i class="icon ion-clock"></i> {{news.create_time}}</p>		
+      </ion-item>
+    </ion-list>
+	<ion-infinite-scroll
+			on-infinite="loadMore()"
+			distance="1%">
+		  </ion-infinite-scroll>
+  </ion-content>
+</ion-view>
+
+<script id="templates/popover.html" type="text/ng-template">
+  <ion-popover-view>	  
+	<ion-header-bar>
+      <h1 class="title">选择分类</h1>
+    </ion-header-bar>
+    <ion-content>
+      <ion-radio ng-repeat="item in typeList"
+                   ng-value="item.value"
+                   ng-model="options.value"
+				   ng-change="typeChange(item)">
+          {{ item.text }}
+        </ion-radio>
+    </ion-content>
+  </ion-popover-view>
+</script>

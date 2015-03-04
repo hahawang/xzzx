@@ -1,0 +1,16 @@
+<ion-view view-title="产品手册">
+  <ion-content>
+	<ion-refresher
+		pulling-text="下拉更新..."
+		on-refresh="doRefresh()">
+	  </ion-refresher>
+	<ion-list>
+      <ion-item class="item item-thumbnail-left" ng-repeat="product in data" type="item-text-wrap" href="#/tab/product/{{product.id}}">
+        <img ng-src="http://61.156.3.49/support/{{product.attach_thumb}}" class="img-rounded">
+        <h2>{{product.product_name}}</h2>
+		<p>查看详情...</p>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>
+

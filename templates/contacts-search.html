@@ -1,0 +1,20 @@
+<ion-view view-title="搜索">
+<ion-header-bar class="bar-subheader item-input-inset">
+	<label class="item-input-wrapper">
+    <i class="icon ion-ios7-search placeholder-icon"></i>
+    <input type="search" placeholder="姓名关键词或手机号码" ng-model="key">
+  </label>
+  <button class="button button-stable button-search" ng-click="search(key)">
+    搜索
+  </button>
+</ion-header-bar>
+  <ion-content>  
+    <ion-list>
+      <ion-item class="item-icon-right" ng-repeat="contacts in contactsList" type="item-text-wrap">
+      <h2>{{contacts.NAME}}</h2>
+	  <p>{{contacts.DEPT}} - {{contacts.DEPT2}}</p> 
+      <p>{{contacts.GWMC}} TEL:{{contacts.MOBILE}}</p>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>

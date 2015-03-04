@@ -1,0 +1,33 @@
+<!--
+This template loads for the 'tab.friend-detail' state (app.js)
+'friend' is a $scope variable created in the FriendsCtrl controller (controllers.js)
+The FriendsCtrl pulls data from the Friends service (service.js)
+The Friends service returns an array of friend data
+-->
+<ion-view view-title="{{title}}">
+  <ion-content class="padding">
+    
+	<div class="list card">
+      <div class="item item-divider">{{expert.truename}}</div>
+      <div class="item item-thumbnail-left">
+	  <img ng-src="http://61.156.3.49/support/{{expert.attach_thumb}}" class="img-rounded">		
+		<p>
+		手机：{{expert.mobile}}<br/>
+		固话：{{expert.tel}}<br/>
+		邮箱：{{expert.email}}
+	  </p>         
+      </div>
+    </div>
+	<div class="list card">
+      <div class="item item-divider">专业特长</div>
+      <div class="item item-body" ng-bind-html="expert.specialty">         
+      </div>
+    </div>
+    <div class="list card">
+      <div class="item item-divider">典型案例</div>
+      <div class="item item-body" ng-bind-html="expert.cases">
+      </div>
+    </div>
+    
+  </ion-content>
+</ion-view>

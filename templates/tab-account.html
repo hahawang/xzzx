@@ -1,0 +1,16 @@
+<ion-view view-title="设置">
+  <ion-content class="padding">
+    <ion-list>
+	  <ion-item class="item item-input">
+		<span class="input-label">
+		当前用户
+		</span>
+		<label ng-bind-html="user.username"></label>
+	  </ion-item>
+      
+    </ion-list>
+	<button class="button button-block button-positive" ng-click="logout()">
+	  注 销
+	</button>
+  </ion-content>
+</ion-view>

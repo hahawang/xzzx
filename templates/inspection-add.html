@@ -1,0 +1,37 @@
+<ion-view view-title="信息上报">
+	<ion-nav-buttons side="right">
+	<button class="button button-icon icon ion-checkmark-circled"  ng-click="uploadPic()"></button>
+</ion-nav-buttons>
+  <ion-content class="padding">
+    <div class="list">
+	  <label class="item item-input item-stacked-label">
+		<span class="input-label">标题</span>
+		<input type="text" placeholder="标题">
+	  </label>
+	  <label class="item item-input item-stacked-label">
+		<span class="input-label">分类</span>
+		<input type="text" placeholder="分类">
+	  </label>
+	  <label class="item item-input item-stacked-label">
+		<span class="input-label">内容</span>
+		<input type="text" placeholder="内容" ng-model="insp.note">
+	  </label>  	  
+	   <label class="item item-input item-stacked-label">
+		<span class="input-label">位置</span>
+		<input type="text" placeholder="GPS" ng-model="insp.gps">
+	  </label>
+	  <label class="item item-input item-stacked-label">	
+		 <span class="input-label">照片</span>
+		 <div class="row">		 	  
+		  <div class="col col-25" ng-repeat="img in images_list">
+			<img src="{{img}}" class="img-thumbnail" on-hold="deletePic(img)"/>
+		  </div>
+		  </div>
+		</label>
+	</div>
+	<div class="button-bar">
+	  <button class="button icon icon ion-camera"  ng-click="appendByCamera()"/>
+	  <button class="button icon icon ion-pinpoint"  ng-click="getLocation()"/>
+	</div>
+  </ion-content>
+</ion-view>

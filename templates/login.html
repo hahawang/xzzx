@@ -1,0 +1,23 @@
+<ion-view view-title="登录">
+	<ion-content class="padding">
+	  <img src="img/wo.png" style="width:100%;"/>
+	  <div class="list">
+		<label class="item item-input">
+		  <span class="input-label">账号</span>
+		  <input type="text" ng-model="user.mobile">
+		</label>
+		<label class="item item-input">
+		  <span class="input-label">密码</span>
+		  <input type="password" ng-model="user.password">
+		</label>
+	  </div>
+	  <div class="padding">
+		<button class="button button-block button-positive" ng-click="login(user)">
+		  登 录
+		</button>
+		<p class="text-center">
+		  <a href="#/forgot-password">Forgot password</a>
+		</p>
+	  </div>
+	</ion-content>
+</ion-view>

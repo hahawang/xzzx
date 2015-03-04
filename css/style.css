@@ -1,0 +1,15 @@
+/* Empty. Add your own CSS if you like */
+
+#newsContent{
+	font-size:18px;
+	line-height:24px;
+	color:#666;
+	
+}
+#newsContent img{
+	width:100%
+}
+.title-image {
+    margin-top: 8px;
+    height: 27px;
+}

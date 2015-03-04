@@ -1,0 +1,22 @@
+<ion-view view-title="部门列表">
+<ion-nav-buttons side="right">
+	<a class="button button-icon icon ion-search"  href="#/tab/contacts-search"></a>
+</ion-nav-buttons>
+<ion-header-bar class="bar-subheader bar-stable">
+	<div class="button-bar" ng-init="type=1">
+        <a class="button" ng-click="getDeptList(1)" ng-class="{active: type==1}">部室</a>
+        <a class="button" ng-click="getDeptList(2)" ng-class="{active: type==2}">中心</a>
+        <a class="button" ng-click="getDeptList(3)" ng-class="{active: type==3}">集客</a>
+		<a class="button" ng-click="getDeptList(4)" ng-class="{active: type==4}">渠道</a>
+        <a class="button" ng-click="getDeptList(5)" ng-class="{active: type==5}">县域</a>
+	</div>
+</ion-header-bar>
+  <ion-content has-header="true" has-subheader="true" has-tabs="true">
+    <ion-list>
+      <ion-item class="item-icon-right" ng-repeat="dept in deptList" type="item-text-wrap" href="#/tab/dept/{{dept.department}}">
+        {{dept.department}}
+		<i class="icon ion-chevron-right icon-accessory"></i>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view> 
